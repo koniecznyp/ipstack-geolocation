@@ -60,7 +60,7 @@ The application API takes one parameter, which is the ``address``, which is pass
 The ``ipstack`` service provides a lot more information but for simplicity the amount of data in the response has been limited. This can be easily changed by extending the ``DTO``(data transfer object) class with new properties without violating the internal logic of the application.
 
 ## Errors
-If an error occurs, an object containing the ``code`` and ``message`` field will be returned. For example, if there is no resource with the IP address 8.8.8.8 in the application, an error will be returned
+If an error occurs, an object containing the ``code`` and ``message`` field will be returned. For example, if there is no resource with the IP address 8.8.8.8 in the application, an error will be returned (The response code will also be placed in the header of the response)
 ```
 {
   "code": 404,
