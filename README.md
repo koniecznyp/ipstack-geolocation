@@ -22,6 +22,7 @@ http://localhost:5000/swagger
 ```
 The application API takes one parameter, which is the ``address``, which is passed in ``body`` as ``JSON``. In the address field you can pass the IP address or URL.
 
+> Note: To run ``End-to-End`` and ``Integration`` tests, enter the access key to the ``appsettings.json`` file in test projects
 ### Example 1:
 
 ``POST`` Request:
@@ -58,4 +59,11 @@ The application API takes one parameter, which is the ``address``, which is pass
 ```
 The ``ipstack`` service provides a lot more information but for simplicity the amount of data in the response has been limited. This can be easily changed by extending the ``DTO``(data transfer object) class with new properties without violating the internal logic of the application.
 
-> To run ``End-to-End`` and ``Integration`` tests, enter the access key to the ``appsettings.json`` file in test projects
+## Errors
+If an error occurs, an object containing the ``code`` and ``message`` field will be returned. For example, if there is no resource with the IP address 8.8.8.8 in the application, an error will be returned
+```
+{
+  "code": 404,
+  "message": "Geolocation with address 8.8.8.8 not exists"
+}
+```
